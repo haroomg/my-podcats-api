@@ -8,7 +8,7 @@ import { UserEntity } from './entity/user.entity';
 export class UserService {
   constructor(private prisma: PrismaService) {}
 
-  async createUser(data: CreateUserDto) {
+  async createUser(data: CreateUserDto): Promise<UserEntity> {
     const username: string = data.username;
     const email: string = data.email;
     const password: string = data.password;
